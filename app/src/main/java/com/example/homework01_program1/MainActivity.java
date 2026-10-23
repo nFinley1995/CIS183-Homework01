@@ -5,6 +5,7 @@
 //=====================================================================
 package com.example.homework01_program1;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,10 +34,12 @@ public class MainActivity extends AppCompatActivity
   ListView lv_j_listOfColors;
   private ArrayList<ColorInfo> listOfColors;
 
+  View mainLayout;
+
    int red = 0;
    int green = 0;
    int blue = 0;
-   String hex = "00";
+   String hex = "000000";
 
 
     @Override
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        mainLayout = findViewById(R.id.main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) ->
         {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -167,5 +171,6 @@ public class MainActivity extends AppCompatActivity
         int blue = sb_j_blue.getProgress();
         String hex = String.format("%02X%02X%02X", red, green, blue);
         tv_j_hexNum.setText("Hex Representation: " + hex);
+        mainLayout.setBackgroundColor(Color.rgb(red, green, blue));
     }
 }
