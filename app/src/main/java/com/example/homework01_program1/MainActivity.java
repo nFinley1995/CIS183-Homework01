@@ -22,15 +22,15 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
 {
-  TextView tv_j_main_Red;
-  TextView tv_j_main_Green;
-  TextView getTv_j_main_Blue;
-  TextView tv_j_main_hexNum;
-  SeekBar sb_j_main_Red;
-  SeekBar sb_j_main_Green;
-  SeekBar sb_j_main_Blue;
-  Button btn_j_main_SaveColor;
-  ListView lv_j_main_listOfColors;
+  TextView tv_j_red;
+  TextView tv_j_green;
+  TextView getTv_j_blue;
+  TextView tv_j_hexNum;
+  SeekBar sb_j_red;
+  SeekBar sb_j_green;
+  SeekBar sb_j_blue;
+  Button btn_j_saveColor;
+  ListView lv_j_listOfColors;
   private ArrayList<ColorInfo> listOfColors;
 
    int red = 0;
@@ -52,31 +52,31 @@ public class MainActivity extends AppCompatActivity
             return insets;
         });
 
-       sb_j_main_Red = findViewById(R.id.sb_v_main_Red);
-        sb_j_main_Green = findViewById(R.id.sb_v_main_Green);
-        sb_j_main_Blue = findViewById(R.id.sb_v_main_Blue);
-        btn_j_main_SaveColor = findViewById(R.id.btn_v_main_SaveColor);
-        lv_j_main_listOfColors = findViewById(R.id.lv_v_main_listOfColors);
-        tv_j_main_Red = findViewById(R.id.tv_v_main_Red);
-        tv_j_main_Green = findViewById(R.id.tv_v_main_Green);
-        getTv_j_main_Blue = findViewById(R.id.tv_v_main_Blue);
-        tv_j_main_hexNum = findViewById(R.id.tv_v_main_hexNum);
+       sb_j_red = findViewById(R.id.sb_v_red);
+        sb_j_green = findViewById(R.id.sb_v_green);
+        sb_j_blue = findViewById(R.id.sb_v_blue);
+        btn_j_saveColor = findViewById(R.id.btn_v_saveColor);
+        lv_j_listOfColors = findViewById(R.id.lv_v_listOfColors);
+        tv_j_red = findViewById(R.id.tv_v_red);
+        tv_j_green = findViewById(R.id.tv_v_green);
+        getTv_j_blue = findViewById(R.id.tv_v_blue);
+        tv_j_hexNum = findViewById(R.id.tv_v_hexNum);
         listOfColors = new ArrayList<>();
-        sb_j_main_Red.setMax(255);
-        sb_j_main_Red.setProgress(0);
-        sb_j_main_Green.setMax(255);
-        sb_j_main_Green.setProgress(0);
-        sb_j_main_Blue.setMax(255);
-        sb_j_main_Blue.setProgress(0);
+        sb_j_red.setMax(255);
+        sb_j_red.setProgress(0);
+        sb_j_green.setMax(255);
+        sb_j_green.setProgress(0);
+        sb_j_blue.setMax(255);
+        sb_j_blue.setProgress(0);
 
-        sb_j_main_Red.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+        sb_j_red.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
         {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
             {
                 if (fromUser)
                 {
-                    tv_j_main_Red.setText("Red: " + progress);
+                    tv_j_red.setText("Red: " + progress);
                 }
             }
 
@@ -93,14 +93,14 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        sb_j_main_Green.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+        sb_j_green.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
         {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
             {
                 if (fromUser)
                 {
-                    tv_j_main_Green.setText("Green: " + progress);
+                    tv_j_green.setText("Green: " + progress);
                 }
             }
 
@@ -117,14 +117,14 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        sb_j_main_Blue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+        sb_j_blue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
         {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
             {
                 if (fromUser)
                 {
-                    getTv_j_main_Blue.setText("Blue: " + progress);
+                    getTv_j_blue.setText("Blue: " + progress);
                 }
             }
 
@@ -141,15 +141,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        btn_j_main_SaveColor.setOnClickListener(new View.OnClickListener()
+        btn_j_saveColor.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                red = sb_j_main_Red.getProgress();
-                green = sb_j_main_Green.getProgress();
-                blue = sb_j_main_Blue.getProgress();
-                String hex = tv_j_main_hexNum.getText().toString();
+                red = sb_j_red.getProgress();
+                green = sb_j_green.getProgress();
+                blue = sb_j_blue.getProgress();
+                String hex = tv_j_hexNum.getText().toString();
             }
         });
     }
