@@ -9,7 +9,10 @@ public class ColorInfo
 
     public ColorInfo()
     {
-
+        red = 0;
+        green = 0;
+        blue = 0;
+        hex = "#000000";
     }
 
     public ColorInfo(int R, int G, int B, String H)
@@ -20,35 +23,50 @@ public class ColorInfo
         hex = H;
     }
 
-    public int getGreen() {
-        return green;
-    }
 
-    public int getRed() {
+    public int getRed()
+    {
         return red;
     }
 
-    public int getBlue() {
+    public int getGreen()
+    {
+        return green;
+    }
+
+    public int getBlue()
+    {
         return blue;
     }
 
-    public String getHex() {
+    public String getHex()
+    {
         return hex;
     }
 
-    public void setRed(int red) {
+    public void setRed(int red)
+    {
         this.red = red;
     }
 
-    public void setGreen(int green) {
+    public void setGreen(int green)
+    {
         this.green = green;
     }
 
-    public void setBlue(int blue) {
+    public void setBlue(int blue)
+    {
         this.blue = blue;
     }
 
-    public void setHex(String hex) {
+    public void setHex(String hex)
+    {
         this.hex = hex;
+    }
+
+    @Override
+    public String toString()
+    {
+        return hex;
     }
 }
