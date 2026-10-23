@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity
                 {
                     tv_j_red.setText("Red: " + progress);
                 }
+
+                updateHex();
             }
 
             @Override
@@ -102,6 +104,8 @@ public class MainActivity extends AppCompatActivity
                 {
                     tv_j_green.setText("Green: " + progress);
                 }
+
+                updateHex();
             }
 
             @Override
@@ -126,6 +130,8 @@ public class MainActivity extends AppCompatActivity
                 {
                     getTv_j_blue.setText("Blue: " + progress);
                 }
+
+                updateHex();
             }
 
             @Override
@@ -152,5 +158,14 @@ public class MainActivity extends AppCompatActivity
                 String hex = tv_j_hexNum.getText().toString();
             }
         });
+    }
+
+    private void updateHex()
+    {
+        int red = sb_j_red.getProgress();
+        int green = sb_j_green.getProgress();
+        int blue = sb_j_blue.getProgress();
+        String hex = String.format("%02X%02X%02X", red, green, blue);
+        tv_j_hexNum.setText("Hex Representation: " + hex);
     }
 }
