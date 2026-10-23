@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_v_main_hexNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
+        android:text="Hex Representation:"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_v_main_SaveColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_v_main_Blue" />
+
+    <SeekBar
+        android:id="@+id/sb_v_main_Blue"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_v_main_hexNum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_v_main_Blue"
+        tools:visibility="visible" />
+
+    <SeekBar
+        android:id="@+id/sb_v_main_Green"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_v_main_Blue"
+        app:layout_constraintEnd_toEndOf="@+id/sb_v_main_Blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_v_main_Green"
+        tools:visibility="visible" />
+
+    <SeekBar
+        android:id="@+id/sb_v_main_Red"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_v_main_Green"
+        app:layout_constraintEnd_toEndOf="@+id/sb_v_main_Green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_v_main_Red"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_v_main_Red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="11dp"
+        android:text="Red: 0"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/sb_v_main_Red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_v_main_Green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Green: 0"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/sb_v_main_Green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_v_main_Red" />
+
+    <TextView
+        android:id="@+id/tv_v_main_Blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Blue: 0"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/sb_v_main_Blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_v_main_Green" />
+
+    <Button
+        android:id="@+id/btn_v_main_SaveColor"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="SAVE COLOR"
+        app:layout_constraintBottom_toTopOf="@+id/lv_v_main_listOfColors"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_v_main_hexNum" />
+
+    <ListView
+        android:id="@+id/lv_v_main_listOfColors"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_v_main_SaveColor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
