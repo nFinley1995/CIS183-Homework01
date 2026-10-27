@@ -7,6 +7,7 @@ package com.example.homework01_program1;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -160,6 +161,15 @@ public class MainActivity extends AppCompatActivity
                 green = sb_j_green.getProgress();
                 blue = sb_j_blue.getProgress();
                 String hex = tv_j_hexNum.getText().toString();
+                Log.d("RGB", "Red: " + sb_j_red.getProgress());
+                Log.d("RGB", "Green: " + sb_j_green.getProgress());
+                Log.d("RGB", "Blue: " + sb_j_blue.getProgress());
+                sb_j_red.setProgress(0);
+                sb_j_green.setProgress(0);
+                sb_j_blue.setProgress(0);
+                Log.d("RGB", "Red: " + sb_j_red.getProgress());
+                Log.d("RGB", "Green: " + sb_j_green.getProgress());
+                Log.d("RGB", "Blue: " + sb_j_blue.getProgress());
             }
         });
     }
