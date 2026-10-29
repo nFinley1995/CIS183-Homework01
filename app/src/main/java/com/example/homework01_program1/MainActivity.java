@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity
         int green = sb_j_green.getProgress();
         int blue = sb_j_blue.getProgress();
         String hex = String.format("%02X%02X%02X", red, green, blue);
-        tv_j_hexNum.setText("Hex Representation: " + hex);
+        tv_j_hexNum.setText("Hex Representation:  #" + hex);
         mainLayout.setBackgroundColor(Color.rgb(red, green, blue));
     }
 }
