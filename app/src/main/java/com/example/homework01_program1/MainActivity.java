@@ -34,14 +34,13 @@ public class MainActivity extends AppCompatActivity
   Button btn_j_saveColor;
   ListView lv_j_listOfColors;
   private ArrayList<ColorInfo> listOfColors;
+  ColorAdapter cAdapter;
 
   View mainLayout;
 
    int red = 0;
    int green = 0;
    int blue = 0;
-   String hex = "000000";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -68,11 +67,14 @@ public class MainActivity extends AppCompatActivity
         tv_j_hexNum = findViewById(R.id.tv_v_hexNum);
         listOfColors = new ArrayList<>();
         sb_j_red.setMax(255);
-        sb_j_red.setProgress(0);
+        sb_j_red.setProgress(255);
         sb_j_green.setMax(255);
-        sb_j_green.setProgress(0);
+        sb_j_green.setProgress(255);
         sb_j_blue.setMax(255);
-        sb_j_blue.setProgress(0);
+        sb_j_blue.setProgress(255);
+
+        cAdapter = new ColorAdapter(this, listOfColors);
+        lv_j_listOfColors.setAdapter(cAdapter);
 
         sb_j_red.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
         {
@@ -164,9 +166,12 @@ public class MainActivity extends AppCompatActivity
                 Log.d("RGB", "Red: " + sb_j_red.getProgress());
                 Log.d("RGB", "Green: " + sb_j_green.getProgress());
                 Log.d("RGB", "Blue: " + sb_j_blue.getProgress());
-                sb_j_red.setProgress(0);
-                sb_j_green.setProgress(0);
-                sb_j_blue.setProgress(0);
+                sb_j_red.setProgress(255);
+                sb_j_green.setProgress(255);
+                sb_j_blue.setProgress(255);
+                tv_j_red.setText("Red: " + 255);
+                tv_j_green.setText("Green: " + 255);
+                getTv_j_blue.setText("Blue: " + 255);
                 Log.d("RGB", "Red: " + sb_j_red.getProgress());
                 Log.d("RGB", "Green: " + sb_j_green.getProgress());
                 Log.d("RGB", "Blue: " + sb_j_blue.getProgress());
