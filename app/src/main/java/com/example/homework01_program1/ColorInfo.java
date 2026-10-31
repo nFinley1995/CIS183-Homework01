@@ -12,7 +12,7 @@ public class ColorInfo
         red = 0;
         green = 0;
         blue = 0;
-        hex = "#000000";
+        hex = "#FFFFFF";
     }
 
     public ColorInfo(int R, int G, int B, String H)
