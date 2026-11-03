@@ -14,7 +14,6 @@ public class ColorInfo
         blue = 0;
         hex = "#FFFFFF";
     }
-
     public ColorInfo(int R, int G, int B, String H)
     {
         red = R;
@@ -22,7 +21,6 @@ public class ColorInfo
         blue = B;
         hex = H;
     }
-
 
     public int getRed()
     {

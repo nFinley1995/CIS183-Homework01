@@ -174,6 +174,21 @@ public class MainActivity extends AppCompatActivity
                 tv_j_main_blue.setText("Blue: " + 255);
             }
         });
+
+        lv_j_main_listOfColors.setOnItemClickListener((parent, view, position, id) ->
+        {
+            // Get the selected color
+            ColorInfo selectedColor = listOfColors.get(position);
+
+            // Restore RGB values to the SeekBars
+            sb_j_main_red.setProgress(selectedColor.getRed());
+            sb_j_main_green.setProgress(selectedColor.getGreen());
+            sb_j_main_blue.setProgress(selectedColor.getBlue());
+            tv_j_main_red.setText("Red: " + selectedColor.getRed());
+            tv_j_main_green.setText("Green: " + selectedColor.getGreen());
+            tv_j_main_blue.setText("Blue: " + selectedColor.getBlue());
+        });
+
     }
 
     private void updateHex()

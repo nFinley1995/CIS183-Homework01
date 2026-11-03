@@ -1,6 +1,7 @@
 package com.example.homework01_program1;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,15 @@ public class ColorAdapter extends BaseAdapter
         colorGreen.setText("Green: " + color.getGreen());
         colorBlue.setText("Blue: " + color.getBlue());
         colorHex.setText(color.getHex());
+
+        int rowColor = Color.rgb(
+                color.getRed(),
+                color.getGreen(),
+                color.getBlue()
+        );
+
+// Set the ListView row background
+        convertView.setBackgroundColor(rowColor);
 
         return convertView;
     }
