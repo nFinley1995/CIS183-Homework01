@@ -49,10 +49,10 @@ public class ColorAdapter extends BaseAdapter
             convertView = mInflater.inflate(R.layout.colorlistcell, null);
         }
 
-        TextView colorRed= convertView.findViewById(R.id.tv_v_cell_red);
-        TextView colorGreen= convertView.findViewById(R.id.tv_v_cell_green);
-        TextView colorBlue= convertView.findViewById(R.id.tv_v_cell_blue);
-        TextView colorHex= convertView.findViewById(R.id.tv_v_cell_hexNum);
+        TextView colorRed = convertView.findViewById(R.id.tv_v_cell_red);
+        TextView colorGreen = convertView.findViewById(R.id.tv_v_cell_green);
+        TextView colorBlue = convertView.findViewById(R.id.tv_v_cell_blue);
+        TextView colorHex = convertView.findViewById(R.id.tv_v_cell_hexNum);
 
         ColorInfo  color = listOfColors.get(position);
 
