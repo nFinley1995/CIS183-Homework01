@@ -1,6 +1,6 @@
 //=====================================================================
 //Author   : Nic Finley
-//Date     : 10-30-2026
+//Date     : 11-08-2026
 //Desc     : RGB Color Picker using sliders
 //=====================================================================
 package com.example.homework01_program1;
@@ -24,6 +24,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
 {
+  //variable and GUI declaration.
   TextView tv_j_main_red;
   TextView tv_j_main_green;
   TextView tv_j_main_blue;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity
    int red = 0;
    int green = 0;
    int blue = 0;
+   boolean yIQ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -172,6 +174,7 @@ public class MainActivity extends AppCompatActivity
                 tv_j_main_red.setText("Red: " + 255);
                 tv_j_main_green.setText("Green: " + 255);
                 tv_j_main_blue.setText("Blue: " + 255);
+                updateHex();
             }
         });
 
@@ -191,6 +194,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    //Convert RGB to Hex.
     private void updateHex()
     {
         int red = sb_j_main_red.getProgress();
@@ -199,5 +203,37 @@ public class MainActivity extends AppCompatActivity
         String hex = String.format("%02X%02X%02X", red, green, blue);
         tv_j_main_hexNum.setText("Hex Representation:  #" + hex);
         mainLayout.setBackgroundColor(Color.rgb(red, green, blue));
+        textColor(red, green, blue);
+    }
+
+    //Set text color.
+    private void textColor(int red, int green, int blue)
+    {
+        int brightness = (red * 299 + green * 587 + blue * 114) / 1000;
+
+        int textColor;
+
+        if (brightness < 128)
+        {
+            yIQ = true;
+        }
+        else
+        {
+            yIQ = false;
+        }
+
+        if (yIQ == true)
+        {
+            textColor = Color.WHITE;
+        }
+        else
+        {
+            textColor = Color.BLACK;
+        }
+
+        tv_j_main_red.setTextColor(textColor);
+        tv_j_main_green.setTextColor(textColor);
+        tv_j_main_blue.setTextColor(textColor);
+        tv_j_main_hexNum.setTextColor(textColor);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.homework01_program1;
 
+//Declaring class info
 public class ColorInfo
 {
     private int red;
@@ -22,6 +23,7 @@ public class ColorInfo
         hex = H;
     }
 
+    //Getters and setters.
     public int getRed()
     {
         return red;

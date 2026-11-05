@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+//Set up custom adapter.
 public class ColorAdapter extends BaseAdapter
 {
     Context context;
@@ -66,8 +67,25 @@ public class ColorAdapter extends BaseAdapter
                 color.getBlue()
         );
 
-// Set the ListView row background
         convertView.setBackgroundColor(rowColor);
+        //Set text color of saved colors.
+        int brightness = (color.getRed() * 299 + color.getGreen() * 587 + color.getBlue() * 114) / 1000;
+
+        int textColor;
+
+        if (brightness < 128)
+        {
+            textColor = Color.WHITE;
+        }
+        else
+        {
+            textColor = Color.BLACK;
+        }
+
+        colorRed.setTextColor(textColor);
+        colorGreen.setTextColor(textColor);
+        colorBlue.setTextColor(textColor);
+        colorHex.setTextColor(textColor);
 
         return convertView;
     }
